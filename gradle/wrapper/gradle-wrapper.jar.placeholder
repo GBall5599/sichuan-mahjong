@@ -1,0 +1,13 @@
+# Gradle Wrapper JAR 占位符
+
+由于这是一个二进制文件，无法在文本环境中创建。
+
+请按以下步骤获取正确的gradle-wrapper.jar文件：
+
+1. 访问 https://gradle.org/releases/
+2. 下载 Gradle 8.2 版本
+3. 从下载的Gradle中复制 gradle-wrapper.jar 到此目录
+4. 删除此占位符文件
+
+或者，运行以下命令自动下载：
+gradlew wrapper --gradle-version 8.2

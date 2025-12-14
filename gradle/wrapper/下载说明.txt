@@ -1,0 +1,25 @@
+📥 gradle-wrapper.jar 下载说明
+
+由于gradle-wrapper.jar是二进制文件，无法在此直接创建。
+
+🔗 下载地址：
+https://github.com/gradle/gradle/raw/v8.2.0/gradle/wrapper/gradle-wrapper.jar
+
+📋 下载步骤：
+1. 点击上面的链接
+2. 浏览器会自动下载gradle-wrapper.jar文件
+3. 将下载的文件放到 gradle/wrapper/ 目录下
+
+💡 或者使用以下命令下载：
+curl -L -o gradle/wrapper/gradle-wrapper.jar https://github.com/gradle/gradle/raw/v8.2.0/gradle/wrapper/gradle-wrapper.jar
+
+⚠️  重要提示：
+- 如果你使用GitHub Actions构建，可以不用手动下载
+- GitHub Actions会自动下载所需的gradle-wrapper.jar
+- 只有本地构建时才需要这个文件
+
+🚀 GitHub Actions构建优势：
+- 无需本地安装任何开发工具
+- 自动下载所有依赖
+- 云端构建，不占用本地资源
+- 构建成功后直接下载APK

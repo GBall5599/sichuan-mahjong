@@ -1,0 +1,97 @@
+📋 GitHub上传文件清单
+
+🔥 必须上传的核心文件：
+
+📁 根目录文件：
+✅ build.gradle
+✅ settings.gradle  
+✅ gradle.properties
+✅ gradlew
+✅ gradlew.bat
+✅ local.properties
+
+📁 .github/workflows/ 目录：
+✅ build-apk.yml
+
+📁 gradle/wrapper/ 目录：
+✅ gradle-wrapper.properties
+⚠️  gradle-wrapper.jar (GitHub会自动下载)
+
+📁 app/ 目录：
+✅ build.gradle
+
+📁 app/src/main/ 目录：
+✅ AndroidManifest.xml
+
+📁 app/src/main/java/com/sichuanmahjong/game/ 目录：
+✅ MainActivity.kt
+✅ GameActivity.kt
+✅ ScoreActivity.kt
+
+📁 app/src/main/java/com/sichuanmahjong/game/model/ 目录：
+✅ MahjongTile.kt
+✅ Player.kt
+
+📁 app/src/main/java/com/sichuanmahjong/game/viewmodel/ 目录：
+✅ GameViewModel.kt
+✅ ScoreViewModel.kt
+
+📁 app/src/main/java/com/sichuanmahjong/game/database/ 目录：
+✅ ScoreEntity.kt
+✅ ScoreDao.kt
+✅ AppDatabase.kt
+
+📁 app/src/main/java/com/sichuanmahjong/game/adapter/ 目录：
+✅ ScoreAdapter.kt
+
+📁 app/src/main/java/com/sichuanmahjong/game/utils/ 目录：
+✅ SichuanVoiceManager.kt
+
+📁 app/src/main/res/layout/ 目录：
+✅ activity_main.xml
+✅ activity_game.xml
+✅ activity_score.xml
+✅ item_score.xml
+
+📁 app/src/main/res/values/ 目录：
+✅ strings.xml
+✅ colors.xml
+✅ themes.xml
+
+📁 app/src/main/res/drawable/ 目录：
+✅ bg_main.xml
+✅ bg_game.xml
+✅ bg_table.xml
+
+📁 app/src/main/res/raw/ 目录：
+✅ sichuan_hu.txt
+✅ sichuan_peng.txt
+✅ sichuan_gang.txt
+✅ sichuan_chi.txt
+
+🚀 上传方法：
+
+方法1 - 网页上传（推荐）：
+1. 在GitHub仓库页面点击"Add file" → "Upload files"
+2. 拖拽整个项目文件夹到页面
+3. 等待上传完成
+4. 填写提交信息："初始提交：四川麻将项目"
+5. 点击"Commit changes"
+
+方法2 - 压缩包上传：
+1. 将项目文件夹压缩成ZIP
+2. 在GitHub上传ZIP文件
+3. GitHub会自动解压
+
+⚠️  注意事项：
+- 不要上传 .git 文件夹
+- 不要上传 build/ 文件夹
+- 确保文件夹结构正确
+- gradle-wrapper.jar 可以不上传，GitHub会自动下载
+
+✅ 上传完成后：
+1. 检查文件结构是否正确
+2. 点击 Actions 标签页
+3. 查看是否有自动构建任务
+4. 等待构建完成
+5. 下载生成的APK文件

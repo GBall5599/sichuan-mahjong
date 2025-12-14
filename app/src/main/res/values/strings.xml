@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">四川麻将</string>
+    <string name="start_game">开始游戏</string>
+    <string name="score_history">积分记录</string>
+    <string name="settings">设置</string>
+    <string name="exit">退出</string>
+    
+    <!-- 游戏界面 -->
+    <string name="hu">胡</string>
+    <string name="peng">碰</string>
+    <string name="gang">杠</string>
+    <string name="guo">过</string>
+    <string name="chi">吃</string>
+    
+    <!-- 四川话语音提示 -->
+    <string name="sichuan_hu">胡了！</string>
+    <string name="sichuan_peng">碰！</string>
+    <string name="sichuan_gang">杠！</string>
+    <string name="sichuan_chi">吃！</string>
+    
+    <!-- 积分相关 -->
+    <string name="current_score">当前积分</string>
+    <string name="total_games">总局数</string>
+    <string name="win_rate">胜率</string>
+    <string name="reset_score">重置积分</string>
+</resources>

@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_game">
+
+    <!-- 顶部信息栏 -->
+    <LinearLayout
+        android:id="@+id/top_info"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="16dp"
+        android:background="@color/bg_info">
+
+        <TextView
+            android:id="@+id/tv_player_score"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="积分: 0"
+            android:textSize="16sp"
+            android:textColor="@color/text_primary" />
+
+        <TextView
+            android:id="@+id/tv_hand_tile_count"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="手牌: 13张"
+            android:textSize="16sp"
+            android:textColor="@color/text_primary" />
+
+        <TextView
+            android:id="@+id/tv_game_state"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:text="游戏状态"
+            android:textSize="16sp"
+            android:textColor="@color/text_primary"
+            android:gravity="center" />
+
+        <Button
+            android:id="@+id/btn_new_game"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="新游戏"
+            android:textSize="14sp" />
+
+        <Button
+            android:id="@+id/btn_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="返回"
+            android:textSize="14sp" />
+
+    </LinearLayout>
+
+    <!-- 中央游戏区域 -->
+    <LinearLayout
+        android:id="@+id/center_area"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/top_info"
+        android:layout_above="@id/bottom_controls"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:padding="16dp">
+
+        <TextView
+            android:id="@+id/tv_last_tile"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="上家出牌: "
+            android:textSize="18sp"
+            android:textColor="@color/text_primary"
+            android:layout_marginBottom="24dp" />
+
+        <!-- 这里可以添加麻将桌面视图 -->
+        <View
+            android:layout_width="300dp"
+            android:layout_height="300dp"
+            android:background="@drawable/bg_table"
+            android:layout_marginBottom="24dp" />
+
+    </LinearLayout>
+
+    <!-- 底部控制区域 -->
+    <LinearLayout
+        android:id="@+id/bottom_controls"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:orientation="vertical"
+        android:padding="16dp"
+        android:background="@color/bg_controls">
+
+        <!-- 手牌显示 -->
+        <TextView
+            android:id="@+id/tv_hand_tiles"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="手牌: "
+            android:textSize="14sp"
+            android:textColor="@color/text_primary"
+            android:layout_marginBottom="16dp"
+            android:maxLines="2"
+            android:ellipsize="end" />
+
+        <!-- 操作按钮 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center">
+
+            <Button
+                android:id="@+id/btn_hu"
+                android:layout_width="0dp"
+                android:layout_height="50dp"
+                android:layout_weight="1"
+                android:text="@string/hu"
+                android:textSize="18sp"
+                android:layout_marginEnd="8dp"
+                style="@style/ActionButton" />
+
+            <Button
+                android:id="@+id/btn_peng"
+                android:layout_width="0dp"
+                android:layout_height="50dp"
+                android:layout_weight="1"
+                android:text="@string/peng"
+                android:textSize="18sp"
+                android:layout_marginEnd="8dp"
+                style="@style/ActionButton" />
+
+            <Button
+                android:id="@+id/btn_gang"
+                android:layout_width="0dp"
+                android:layout_height="50dp"
+                android:layout_weight="1"
+                android:text="@string/gang"
+                android:textSize="18sp"
+                android:layout_marginEnd="8dp"
+                style="@style/ActionButton" />
+
+            <Button
+                android:id="@+id/btn_guo"
+                android:layout_width="0dp"
+                android:layout_height="50dp"
+                android:layout_weight="1"
+                android:text="@string/guo"
+                android:textSize="18sp"
+                style="@style/ActionButton" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</RelativeLayout>
