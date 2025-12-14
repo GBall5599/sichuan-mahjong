@@ -18,11 +18,8 @@ jobs:
     - name: ☕ 设置Java环境
       uses: actions/setup-java@v4
       with:
-        java-version: '11'
+        java-version: '17'
         distribution: 'temurin'
-        
-    - name: 🔧 设置Android SDK
-      uses: android-actions/setup-android@v3
       
     - name: 📦 缓存Gradle依赖
       uses: actions/cache@v3
