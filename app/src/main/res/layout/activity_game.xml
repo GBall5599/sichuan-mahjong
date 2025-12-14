@@ -2,157 +2,294 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/bg_game">
+    android:background="@drawable/bg_mahjong_table">
 
-    <!-- 顶部信息栏 -->
+    <!-- 顶部玩家区域 -->
     <LinearLayout
-        android:id="@+id/top_info"
+        android:id="@+id/top_player_area"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:padding="16dp"
-        android:background="@color/bg_info">
+        android:layout_height="120dp"
+        android:layout_alignParentTop="true"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:background="@drawable/bg_player_area">
 
         <TextView
-            android:id="@+id/tv_player_score"
-            android:layout_width="0dp"
+            android:id="@+id/tv_top_player_status"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="积分: 0"
-            android:textSize="16sp"
-            android:textColor="@color/text_primary" />
+            android:text="定缺中"
+            android:textSize="18sp"
+            android:textColor="@color/mahjong_gold"
+            android:textStyle="bold" />
+
+        <LinearLayout
+            android:id="@+id/ll_top_player_tiles"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="8dp" />
+
+    </LinearLayout>
+
+    <!-- 左侧玩家区域 -->
+    <LinearLayout
+        android:id="@+id/left_player_area"
+        android:layout_width="120dp"
+        android:layout_height="match_parent"
+        android:layout_alignParentStart="true"
+        android:layout_below="@id/top_player_area"
+        android:layout_above="@id/bottom_player_area"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:background="@drawable/bg_player_area">
 
         <TextView
-            android:id="@+id/tv_hand_tile_count"
-            android:layout_width="0dp"
+            android:id="@+id/tv_left_player_status"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="手牌: 13张"
-            android:textSize="16sp"
-            android:textColor="@color/text_primary" />
+            android:text="定缺中"
+            android:textSize="18sp"
+            android:textColor="@color/mahjong_gold"
+            android:textStyle="bold"
+            android:rotation="90" />
+
+    </LinearLayout>
+
+    <!-- 右侧玩家区域 -->
+    <LinearLayout
+        android:id="@+id/right_player_area"
+        android:layout_width="120dp"
+        android:layout_height="match_parent"
+        android:layout_alignParentEnd="true"
+        android:layout_below="@id/top_player_area"
+        android:layout_above="@id/bottom_player_area"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:background="@drawable/bg_player_area">
+
+        <!-- 玩家头像和积分 -->
+        <ImageView
+            android:id="@+id/iv_right_player_avatar"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:src="@drawable/ic_player_avatar"
+            android:background="@drawable/bg_avatar_frame"
+            android:layout_marginBottom="8dp" />
 
         <TextView
-            android:id="@+id/tv_game_state"
-            android:layout_width="0dp"
+            android:id="@+id/tv_right_player_score"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="2"
-            android:text="游戏状态"
-            android:textSize="16sp"
+            android:text="1795"
+            android:textSize="14sp"
             android:textColor="@color/text_primary"
-            android:gravity="center" />
+            android:layout_marginBottom="16dp" />
 
-        <Button
-            android:id="@+id/btn_new_game"
+        <TextView
+            android:id="@+id/tv_right_player_status"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="新游戏"
-            android:textSize="14sp" />
-
-        <Button
-            android:id="@+id/btn_back"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="返回"
-            android:textSize="14sp" />
+            android:text="定缺中"
+            android:textSize="18sp"
+            android:textColor="@color/mahjong_gold"
+            android:textStyle="bold"
+            android:rotation="-90" />
 
     </LinearLayout>
 
     <!-- 中央游戏区域 -->
-    <LinearLayout
-        android:id="@+id/center_area"
+    <RelativeLayout
+        android:id="@+id/center_game_area"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/top_info"
-        android:layout_above="@id/bottom_controls"
-        android:orientation="vertical"
-        android:gravity="center"
-        android:padding="16dp">
+        android:layout_height="match_parent"
+        android:layout_toEndOf="@id/left_player_area"
+        android:layout_toStartOf="@id/right_player_area"
+        android:layout_below="@id/top_player_area"
+        android:layout_above="@id/bottom_player_area"
+        android:background="@drawable/bg_game_center">
 
-        <TextView
-            android:id="@+id/tv_last_tile"
+        <!-- 定缺选择区域 -->
+        <LinearLayout
+            android:id="@+id/ll_suit_selection"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="上家出牌: "
+            android:layout_centerInParent="true"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:visibility="visible">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="请选择定缺的花色，没有该花色才能胡牌"
+                android:textSize="16sp"
+                android:textColor="@color/text_primary"
+                android:layout_marginBottom="24dp" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <ImageButton
+                    android:id="@+id/btn_select_wan"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:src="@drawable/ic_suit_wan"
+                    android:background="@drawable/bg_suit_selector"
+                    android:layout_marginEnd="16dp"
+                    android:contentDescription="万" />
+
+                <ImageButton
+                    android:id="@+id/btn_select_tiao"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:src="@drawable/ic_suit_tiao"
+                    android:background="@drawable/bg_suit_selector"
+                    android:layout_marginEnd="16dp"
+                    android:contentDescription="条" />
+
+                <ImageButton
+                    android:id="@+id/btn_select_tong"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:src="@drawable/ic_suit_tong"
+                    android:background="@drawable/bg_suit_selector"
+                    android:contentDescription="筒" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <!-- 游戏状态显示 -->
+        <TextView
+            android:id="@+id/tv_game_status"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="16dp"
+            android:text="定缺阶段"
             android:textSize="18sp"
-            android:textColor="@color/text_primary"
-            android:layout_marginBottom="24dp" />
+            android:textColor="@color/mahjong_gold"
+            android:textStyle="bold" />
 
-        <!-- 这里可以添加麻将桌面视图 -->
-        <View
-            android:layout_width="300dp"
-            android:layout_height="300dp"
-            android:background="@drawable/bg_table"
-            android:layout_marginBottom="24dp" />
+    </RelativeLayout>
 
-    </LinearLayout>
-
-    <!-- 底部控制区域 -->
+    <!-- 底部玩家区域（自己） -->
     <LinearLayout
-        android:id="@+id/bottom_controls"
+        android:id="@+id/bottom_player_area"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="160dp"
         android:layout_alignParentBottom="true"
         android:orientation="vertical"
-        android:padding="16dp"
-        android:background="@color/bg_controls">
-
-        <!-- 手牌显示 -->
-        <TextView
-            android:id="@+id/tv_hand_tiles"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="手牌: "
-            android:textSize="14sp"
-            android:textColor="@color/text_primary"
-            android:layout_marginBottom="16dp"
-            android:maxLines="2"
-            android:ellipsize="end" />
+        android:background="@drawable/bg_player_area">
 
         <!-- 操作按钮 -->
         <LinearLayout
+            android:id="@+id/ll_action_buttons"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="50dp"
             android:orientation="horizontal"
-            android:gravity="center">
+            android:gravity="center"
+            android:layout_marginTop="8dp"
+            android:visibility="gone">
 
             <Button
                 android:id="@+id/btn_hu"
                 android:layout_width="0dp"
-                android:layout_height="50dp"
+                android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:text="@string/hu"
-                android:textSize="18sp"
-                android:layout_marginEnd="8dp"
-                style="@style/ActionButton" />
+                android:text="胡"
+                android:textSize="16sp"
+                android:layout_marginEnd="4dp"
+                style="@style/MahjongActionButton" />
 
             <Button
                 android:id="@+id/btn_peng"
                 android:layout_width="0dp"
-                android:layout_height="50dp"
+                android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:text="@string/peng"
-                android:textSize="18sp"
-                android:layout_marginEnd="8dp"
-                style="@style/ActionButton" />
+                android:text="碰"
+                android:textSize="16sp"
+                android:layout_marginEnd="4dp"
+                style="@style/MahjongActionButton" />
 
             <Button
                 android:id="@+id/btn_gang"
                 android:layout_width="0dp"
-                android:layout_height="50dp"
+                android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:text="@string/gang"
-                android:textSize="18sp"
-                android:layout_marginEnd="8dp"
-                style="@style/ActionButton" />
+                android:text="杠"
+                android:textSize="16sp"
+                android:layout_marginEnd="4dp"
+                style="@style/MahjongActionButton" />
 
             <Button
                 android:id="@+id/btn_guo"
                 android:layout_width="0dp"
-                android:layout_height="50dp"
+                android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:text="@string/guo"
-                android:textSize="18sp"
-                style="@style/ActionButton" />
+                android:text="过"
+                android:textSize="16sp"
+                style="@style/MahjongActionButton" />
+
+        </LinearLayout>
+
+        <!-- 手牌区域 -->
+        <HorizontalScrollView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:layout_marginTop="8dp">
+
+            <LinearLayout
+                android:id="@+id/ll_hand_tiles"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:paddingStart="16dp"
+                android:paddingEnd="16dp" />
+
+        </HorizontalScrollView>
+
+        <!-- 底部控制栏 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:background="@color/bg_controls"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp">
+
+            <TextView
+                android:id="@+id/tv_player_score"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="积分: 0"
+                android:textSize="14sp"
+                android:textColor="@color/text_primary" />
+
+            <Button
+                android:id="@+id/btn_menu"
+                android:layout_width="wrap_content"
+                android:layout_height="32dp"
+                android:text="菜单"
+                android:textSize="12sp"
+                android:layout_marginEnd="8dp"
+                style="@style/MahjongSmallButton" />
+
+            <Button
+                android:id="@+id/btn_back"
+                android:layout_width="wrap_content"
+                android:layout_height="32dp"
+                android:text="返回"
+                android:textSize="12sp"
+                style="@style/MahjongSmallButton" />
 
         </LinearLayout>
 

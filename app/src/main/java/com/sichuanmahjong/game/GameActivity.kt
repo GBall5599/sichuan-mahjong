@@ -30,6 +30,20 @@ class GameActivity : AppCompatActivity() {
     }
     
     private fun setupUI() {
+        // 定缺选择按钮
+        binding.btnSelectWan.setOnClickListener {
+            selectSuit("wan")
+        }
+        
+        binding.btnSelectTiao.setOnClickListener {
+            selectSuit("tiao")
+        }
+        
+        binding.btnSelectTong.setOnClickListener {
+            selectSuit("tong")
+        }
+        
+        // 游戏操作按钮
         binding.btnHu.setOnClickListener {
             if (gameViewModel.canPlayerHu()) {
                 voiceManager.playSichuanVoice("hu")
@@ -62,13 +76,35 @@ class GameActivity : AppCompatActivity() {
             gameViewModel.playerPass()
         }
         
-        binding.btnNewGame.setOnClickListener {
-            startNewGame()
+        binding.btnMenu.setOnClickListener {
+            showGameMenu()
         }
         
         binding.btnBack.setOnClickListener {
             finish()
         }
+    }
+    
+    private fun selectSuit(suit: String) {
+        gameViewModel.selectSuit(suit)
+        binding.llSuitSelection.visibility = android.view.View.GONE
+        binding.llActionButtons.visibility = android.view.View.VISIBLE
+        binding.tvGameStatus.text = "游戏进行中"
+        Toast.makeText(this, "已选择定缺：${getSuitName(suit)}", Toast.LENGTH_SHORT).show()
+    }
+    
+    private fun getSuitName(suit: String): String {
+        return when (suit) {
+            "wan" -> "万"
+            "tiao" -> "条"
+            "tong" -> "筒"
+            else -> suit
+        }
+    }
+    
+    private fun showGameMenu() {
+        // TODO: 实现游戏菜单
+        Toast.makeText(this, "游戏菜单", Toast.LENGTH_SHORT).show()
     }
     
     private fun observeGame() {

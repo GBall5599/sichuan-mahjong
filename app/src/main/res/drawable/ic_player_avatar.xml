@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="48dp"
+    android:height="48dp"
+    android:viewportWidth="48"
+    android:viewportHeight="48">
+    <path android:fillColor="@color/button_action_normal"
+          android:pathData="M24,4C35,4 44,13 44,24C44,35 35,44 24,44C13,44 4,35 4,24C4,13 13,4 24,4Z"/>
+    <path android:fillColor="@color/white"
+          android:pathData="M24,12C27,12 30,15 30,18C30,21 27,24 24,24C21,24 18,21 18,18C18,15 21,12 24,12Z"/>
+    <path android:fillColor="@color/white"
+          android:pathData="M12,36C12,30 17,26 24,26C31,26 36,30 36,36L36,40L12,40Z"/>
+</vector>

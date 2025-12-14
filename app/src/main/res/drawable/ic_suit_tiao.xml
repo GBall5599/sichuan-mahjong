@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="48dp"
+    android:height="48dp"
+    android:viewportWidth="48"
+    android:viewportHeight="48">
+    <path android:fillColor="@color/tile_tiao_color"
+          android:pathData="M16,8L18,8L18,40L16,40Z"/>
+    <path android:fillColor="@color/tile_tiao_color"
+          android:pathData="M20,8L22,8L22,40L20,40Z"/>
+    <path android:fillColor="@color/tile_tiao_color"
+          android:pathData="M24,8L26,8L26,40L24,40Z"/>
+    <path android:fillColor="@color/tile_tiao_color"
+          android:pathData="M28,8L30,8L30,40L28,40Z"/>
+    <path android:fillColor="@color/tile_tiao_color"
+          android:pathData="M32,8L34,8L34,40L32,40Z"/>
+</vector>

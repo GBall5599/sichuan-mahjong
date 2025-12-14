@@ -25,4 +25,24 @@
     
     <!-- 应用图标颜色 -->
     <color name="ic_launcher_background">#FF2E7D32</color>
+    
+    <!-- 麻将游戏主题色 -->
+    <color name="mahjong_table_green">#FF0F5132</color>
+    <color name="mahjong_table_light">#FF1B6B47</color>
+    <color name="mahjong_border">#FF8BC34A</color>
+    <color name="mahjong_gold">#FFFFD700</color>
+    <color name="mahjong_red">#FFDC143C</color>
+    
+    <!-- 麻将牌颜色 -->
+    <color name="tile_background">#FFFFFFFF</color>
+    <color name="tile_border">#FF333333</color>
+    <color name="tile_wan_color">#FF000000</color>
+    <color name="tile_tiao_color">#FF2E7D32</color>
+    <color name="tile_tong_color">#FF1976D2</color>
+    
+    <!-- 按钮颜色 -->
+    <color name="button_mahjong_normal">#FF8BC34A</color>
+    <color name="button_mahjong_pressed">#FF689F38</color>
+    <color name="button_action_normal">#FFFF9800</color>
+    <color name="button_action_pressed">#FFF57C00</color>
 </resources>

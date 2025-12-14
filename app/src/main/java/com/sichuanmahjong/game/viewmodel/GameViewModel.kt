@@ -20,10 +20,14 @@ class GameViewModel : ViewModel() {
     private val _lastDiscardedTile = MutableLiveData<MahjongTile?>()
     val lastDiscardedTile: LiveData<MahjongTile?> = _lastDiscardedTile
     
+    private val _gamePhase = MutableLiveData<String>()
+    val gamePhase: LiveData<String> = _gamePhase
+    
     private var players = mutableListOf<Player>()
     private var currentPlayerIndex = 0
     private var tilePool = mutableListOf<MahjongTile>()
     private var gameInProgress = false
+    private var selectedSuit: String? = null
     
     init {
         initializePlayers()
@@ -61,9 +65,30 @@ class GameViewModel : ViewModel() {
         dealInitialTiles()
         
         currentPlayerIndex = 0
-        gameInProgress = true
-        _gameState.value = "游戏开始"
+        gameInProgress = false // 先进入定缺阶段
+        selectedSuit = null
+        _gamePhase.value = "suit_selection"
+        _gameState.value = "定缺阶段"
         _currentPlayer.value = players[0]
+    }
+    
+    /**
+     * 选择定缺花色
+     */
+    fun selectSuit(suit: String) {
+        selectedSuit = suit
+        gameInProgress = true
+        _gamePhase.value = "playing"
+        _gameState.value = "游戏进行中"
+        
+        // AI玩家自动选择定缺
+        for (i in 1 until players.size) {
+            // 简单的AI定缺逻辑：随机选择
+            val aiSuits = listOf("wan", "tiao", "tong")
+            // AI选择与玩家不同的花色
+            val availableSuits = aiSuits.filter { it != suit }
+            // 这里可以添加更智能的AI逻辑
+        }
     }
     
     /**

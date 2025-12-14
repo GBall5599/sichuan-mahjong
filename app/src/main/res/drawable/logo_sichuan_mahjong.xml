@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="200dp"
+    android:height="100dp"
+    android:viewportWidth="200"
+    android:viewportHeight="100">
+    
+    <!-- 背景 -->
+    <path android:fillColor="@color/mahjong_table_green"
+          android:pathData="M10,10L190,10L190,90L10,90Z"/>
+    
+    <!-- 边框 -->
+    <path android:fillColor="@color/mahjong_gold"
+          android:pathData="M8,8L192,8L192,12L8,12Z"/>
+    <path android:fillColor="@color/mahjong_gold"
+          android:pathData="M8,88L192,88L192,92L8,92Z"/>
+    <path android:fillColor="@color/mahjong_gold"
+          android:pathData="M8,8L12,8L12,92L8,92Z"/>
+    <path android:fillColor="@color/mahjong_gold"
+          android:pathData="M188,8L192,8L192,92L188,92Z"/>
+    
+    <!-- 文字区域 -->
+    <path android:fillColor="@color/white"
+          android:pathData="M30,30L170,30L170,70L30,70Z"/>
+    
+    <!-- 装饰性麻将牌图案 -->
+    <path android:fillColor="@color/mahjong_red"
+          android:pathData="M20,20L40,20L40,40L20,40Z"/>
+    <path android:fillColor="@color/tile_tiao_color"
+          android:pathData="M160,20L180,20L180,40L160,40Z"/>
+    <path android:fillColor="@color/tile_tong_color"
+          android:pathData="M20,60L40,60L40,80L20,80Z"/>
+    <path android:fillColor="@color/mahjong_gold"
+          android:pathData="M160,60L180,60L180,80L160,80Z"/>
+          
+</vector>

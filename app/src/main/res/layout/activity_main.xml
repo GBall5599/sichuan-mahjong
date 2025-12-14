@@ -4,83 +4,90 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:gravity="center"
-    android:background="@drawable/bg_main"
+    android:background="@drawable/bg_main_menu"
     android:padding="32dp">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/app_name"
-        android:textSize="48sp"
-        android:textStyle="bold"
-        android:textColor="@color/text_primary"
-        android:layout_marginBottom="48dp" />
+    <ImageView
+        android:layout_width="200dp"
+        android:layout_height="100dp"
+        android:src="@drawable/logo_sichuan_mahjong"
+        android:layout_marginBottom="48dp"
+        android:contentDescription="四川麻将" />
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:gravity="center"
-        android:layout_marginBottom="32dp">
+        android:layout_marginBottom="32dp"
+        android:background="@drawable/bg_stats_panel"
+        android:padding="16dp">
 
         <TextView
             android:id="@+id/tv_current_score"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:text="@string/current_score"
-            android:textSize="18sp"
-            android:layout_marginEnd="24dp" />
+            android:layout_weight="1"
+            android:text="积分: 0"
+            android:textSize="16sp"
+            android:textColor="@color/text_primary"
+            android:gravity="center" />
 
         <TextView
             android:id="@+id/tv_total_games"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:text="@string/total_games"
-            android:textSize="18sp"
-            android:layout_marginEnd="24dp" />
+            android:layout_weight="1"
+            android:text="局数: 0"
+            android:textSize="16sp"
+            android:textColor="@color/text_primary"
+            android:gravity="center" />
 
         <TextView
             android:id="@+id/tv_win_rate"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:text="@string/win_rate"
-            android:textSize="18sp" />
+            android:layout_weight="1"
+            android:text="胜率: 0%"
+            android:textSize="16sp"
+            android:textColor="@color/text_primary"
+            android:gravity="center" />
 
     </LinearLayout>
 
     <Button
         android:id="@+id/btn_start_game"
-        android:layout_width="200dp"
+        android:layout_width="250dp"
         android:layout_height="60dp"
-        android:text="@string/start_game"
+        android:text="开始游戏"
         android:textSize="20sp"
         android:layout_marginBottom="16dp"
-        style="@style/GameButton" />
+        style="@style/MahjongButton" />
 
     <Button
         android:id="@+id/btn_score_history"
-        android:layout_width="200dp"
+        android:layout_width="250dp"
         android:layout_height="60dp"
-        android:text="@string/score_history"
+        android:text="积分记录"
         android:textSize="20sp"
         android:layout_marginBottom="16dp"
-        style="@style/GameButton" />
+        style="@style/MahjongButton" />
 
     <Button
         android:id="@+id/btn_settings"
-        android:layout_width="200dp"
+        android:layout_width="250dp"
         android:layout_height="60dp"
-        android:text="@string/settings"
+        android:text="游戏设置"
         android:textSize="20sp"
         android:layout_marginBottom="16dp"
-        style="@style/GameButton" />
+        style="@style/MahjongButton" />
 
     <Button
         android:id="@+id/btn_exit"
-        android:layout_width="200dp"
+        android:layout_width="250dp"
         android:layout_height="60dp"
-        android:text="@string/exit"
+        android:text="退出游戏"
         android:textSize="20sp"
-        style="@style/GameButton" />
+        style="@style/MahjongButton" />
 
 </LinearLayout>
